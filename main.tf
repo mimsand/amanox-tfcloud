@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "b" {
-  bucket = "amanox-tfcloud-001"
+  bucket = "amanox-tfcloud-002"
   acl    = "private"
 
   tags = {
