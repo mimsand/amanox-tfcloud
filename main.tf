@@ -10,7 +10,6 @@ locals {
 resource "aws_s3_bucket" "example_bucket" {
   bucket = local.bucket_name
   acl    = "public-read"
-  source = "index.html"
   website {
     index_document = aws_s3_bucket_object.index
     error_document = aws_s3_bucket_object.error
