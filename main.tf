@@ -22,6 +22,7 @@ resource "aws_s3_bucket" "example_bucket" {
 
 resource "aws_s3_bucket_object" "index" {
   bucket       = local.bucket_name
+  depends_on   = aws_s3_bucket.example_bucket
   key          = "index.html"
   source       = "index.html"
   content_type = "text/html"
@@ -29,6 +30,7 @@ resource "aws_s3_bucket_object" "index" {
 
 resource "aws_s3_bucket_object" "error" {
   bucket       = local.bucket_name
+  depends_on   = aws_s3_bucket.example_bucket
   key          = "error.html"
   source       = "error.html"
   content_type = "text/html"
