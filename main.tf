@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 locals {
-  bucket_name = "amanox-tfcloud-004"
+  bucket_name = "amanox-tfcloud-005"
 }
 
 resource "aws_s3_bucket" "example_bucket" {
