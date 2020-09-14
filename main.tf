@@ -12,8 +12,8 @@ resource "aws_s3_bucket" "example_bucket" {
   acl    = "public-read"
   source = "index.html"
   website {
-    index_document = var.index_document
-    error_document = var.error_document
+    index_document = aws_s3_bucket_object.index
+    error_document = aws_s3_bucket_object.error
   }
   tags = {
     Name        = "Event"
