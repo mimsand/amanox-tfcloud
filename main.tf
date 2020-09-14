@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 locals {
-  bucket_name = "amanox-tfcloud-003"
+  bucket_name = "amanox-tfcloud-004"
 }
 
 resource "aws_s3_bucket" "example_bucket" {
@@ -26,6 +26,7 @@ resource "aws_s3_bucket_object" "index" {
   key          = "index.html"
   source       = "index.html"
   content_type = "text/html"
+  acl    = "public-read"
 }
 
 resource "aws_s3_bucket_object" "error" {
@@ -34,4 +35,5 @@ resource "aws_s3_bucket_object" "error" {
   key          = "error.html"
   source       = "error.html"
   content_type = "text/html"
+  acl    = "public-read"
 }
