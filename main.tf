@@ -38,6 +38,4 @@ resource "aws_s3_bucket_object" "error" {
   acl    = "public-read"
 }
 
-output "website_url" {
-  value = aws_s3_bucket.example_bucket
-}
+
