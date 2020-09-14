@@ -3,8 +3,12 @@ provider "aws" {
   region  = "eu-central-1"
 }
 
+locals {
+  bucket_name = "amanox-tfcloud-003"
+}
+
 resource "aws_s3_bucket" "example_bucket" {
-  bucket = "amanox-tfcloud-003"
+  bucket = local.bucket_name
   acl    = "public-read"
   source = "index.html"
   website {
